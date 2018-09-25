@@ -1,0 +1,54 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hworld
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        k8s-app: hworld
+        app: hworld
+        prometheus-enabled: "true"
+    spec:
+      containers:
+      - name: hworld
+        image: cvugrinec/hworldv2:1.0
+        ports:
+        - name: web
+          containerPort: 3000
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: hworld
+  labels:
+    k8s-app: hworld
+    app: hworld
+    prometheus-enabled: "true"
+spec:
+  selector:
+    k8s-app: hworld
+  ports:
+  - name: web
+    port: 3000
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: hworld
+  namespace: default
+  labels:
+    k8s-app: hworld
+    app: hworld
+    prometheus-enabled: "true"
+spec:
+  selector:
+    matchLabels:
+      app: hworld
+  endpoints:
+  - port: web
+    interval: 10s
+  namespaceSelector:
+    matchNames:
+    - default

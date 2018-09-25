@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Counter</title>	
+
+    <link href='http://fonts.googleapis.com/css?family=Sintony:400,700' rel='stylesheet' type='text/css'>
+
+    <style type="text/css">    
+
+      body {
+          background-image:url("/static/got/map.jpg");
+#          background-image:url("../static/got/map.jpg");
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+      }
+      html {
+          height: 100%
+      }
+      a {font-family: Arial, Helvetica, sans-serif; color: snow; text-decoration: none;}
+
+      #arryn{
+        background-image:url("/static/got/arryn.png"); 
+        #background-image:url("../static/got/arryn.png"); 
+        background-repeat: no-repeat;
+        background-size: 50pt,50pt;
+        background-position: center; 
+        height: 75pt;
+        width: 150pt;
+        font-size: 14pt;
+        font-family: Cambria, serif;
+        position: absolute;
+        top: 70px;
+        left: 300px;
+      }
+      #stark{
+        background-image:url("/static/got/stark.png"); 
+        #background-image:url("../static/got/stark.png"); 
+        background-repeat: no-repeat;
+        background-size: 50pt,50pt;
+        background-position: center; 
+        height: 75pt;
+        width: 150pt;     
+        font-size: 14pt;
+        font-family: Cambria, serif;
+        position: absolute;
+        top: 170px;
+        left: 300px;
+      }
+      #barratheon{
+        background-image:url("/static/got/barratheon.png"); 
+        #background-image:url("../static/got/barratheon.png"); 
+        background-repeat: no-repeat;
+        background-size: 50pt,50pt;
+        background-position: center; 
+        height: 75pt;
+        width: 150pt;     
+        font-size: 14pt;
+        font-family: Cambria, serif;
+        position: absolute;
+        top: 270px;
+        left: 300px;
+      }
+      #dorne{
+        background-image:url("/static/got/dorne.png"); 
+        background-repeat: no-repeat;
+        background-size: 50pt,50pt;
+        background-position: center; 
+        height: 75pt;
+        width: 150pt;     
+        font-size: 14pt;
+        font-family: Cambria, serif;
+        position: absolute;
+        top: 370px;
+        left: 300px;
+      }
+      #greyjoy{
+        background-image:url("/static/got/greyjoy.png"); 
+        background-repeat: no-repeat;
+        background-size: 50pt,50pt;
+        background-position: center; 
+        height: 75pt;
+        width: 150pt;     
+        font-size: 14pt;
+        font-family: Cambria, serif;
+        position: absolute;
+        top: 470px;
+        left: 300px;
+      }
+      #lannister{
+        background-image:url("/static/got/lannister.png"); 
+        background-repeat: no-repeat;
+        background-size: 50pt,50pt;
+        background-position: center; 
+        height: 75pt;
+        width: 150pt;     
+        font-size: 14pt;
+        font-family: Cambria, serif;
+        position: absolute;
+        top: 570px;
+        left: 300px;
+      }
+      #targaryan{
+        background-image:url("/static/got/targaryan.png"); 
+        background-repeat: no-repeat;
+        background-size: 50pt,50pt;
+        background-position: center; 
+        height: 75pt;
+        width: 150pt;     
+        font-size: 14pt;
+        font-family: Cambria, serif;
+        position: absolute;
+        top: 670px;
+        left: 300px;
+      }
+      #tully{
+        background-image:url("/static/got/tully.png"); 
+        background-repeat: no-repeat;
+        background-size: 50pt,50pt;
+        background-position: center; 
+        height: 75pt;
+        width: 150pt;     
+        font-size: 14pt;
+        font-family: Cambria, serif;
+        position: absolute;
+        top: 770px;
+        left: 300px;
+      }
+      #tyrell{
+        background-image:url("/static/got/tyrell.png"); 
+        background-repeat: no-repeat;
+        background-size: 50pt,50pt;
+        background-position: center; 
+        height: 75pt;
+        width: 150pt;     
+        font-size: 14pt;
+        font-family: Cambria, serif;
+        position: absolute;
+        top: 870px;
+        left: 300px;
+      }
+
+    </style>
+
+  </head>  
+
+  <body>
+    <a href="arryn">
+      <div id="arryn">
+        <br /><br /><br />
+        <p>Arryn: {{ arryncounter }}</p>
+      </div>
+    </a>
+    <a href="stark">
+      <div id="stark">
+          <br /><br /><br />
+          <p>Stark: {{ starkcounter }}</p>
+      </div>
+    </a>
+    <a href="barratheon">
+        <div id="barratheon">
+            <br /><br /><br />
+            <p>Barratheon: {{ barratheoncounter }}</p>
+        </div>
+    </a>
+    <a href="dorne">
+        <div id="dorne">
+            <br /><br /><br />
+            <p>Dorne: {{ dornecounter }}</p>
+        </div>
+    </a>
+    <a href="greyjoy">
+        <div id="greyjoy">
+            <br /><br /><br />
+            <p>Greyjoy: {{ greyjoycounter }}</p>
+        </div>
+    </a>
+    <a href="lannister">
+        <div id="lannister">
+            <br /><br /><br />
+            <p>Lannister: {{ lannistercounter }}</p>
+        </div>
+    </a>
+    <a href="targaryan">
+        <div id="targaryan">
+            <br /><br /><br />
+            <p>Targaryan: {{ targaryancounter }}</p>
+        </div>
+    </a>
+    <a href="tully">
+        <div id="tully">
+            <br /><br /><br />
+            <p>Tully: {{ tullycounter }}</p>
+        </div>
+    </a>
+    <a href="tyrell">
+        <div id="tyrell">
+            <br /><br /><br />
+            <p>Tyrell: {{ tyrellcounter }}</p>
+        </div>
+    </a>
+
+  </body>
+</html>

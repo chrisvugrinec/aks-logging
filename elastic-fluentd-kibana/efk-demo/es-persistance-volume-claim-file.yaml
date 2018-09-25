@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: efk-managed-file
+spec:
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: efkstoragefile
+  resources:
+    requests:
+      storage: 25Gi
