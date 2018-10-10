@@ -8,9 +8,11 @@ kubectl create ns efk-demo
 
 
 # Creating Storage Class
+kubectl delete -f efk-demo/es-storageclass-manageddisk.yaml 
 kubectl create -f efk-demo/es-storageclass-manageddisk.yaml 
 
 # Create deployment using Statefull Set
+kubectl delete -f efk-demo/es-statefulset.yaml
 kubectl create -f efk-demo/es-statefulset.yaml
 
 # Expose the service
